@@ -2,7 +2,7 @@ const Employee = require("../lib/Employee");
 
 describe("Employee class", () =>{
     describe("Initializtion", () =>{
-        it("Should return and populate the card int he HTML with the list of Employee name, Employee id, Employee email", () =>{
+        it("Should initialize the properties of the class", () =>{
           // Arrange
           const testName = "Noha";
           const testId = "100";
@@ -22,7 +22,7 @@ describe("Employee class", () =>{
     });
 
     describe("Get Name", () =>{
-        it("Should return and populate the Employee's name in the right place in the card", () =>{
+        it("Should return the Employee's name", () =>{
             // Arrange
             const testName = "Noha";
             const testId = "100";
@@ -39,7 +39,7 @@ describe("Employee class", () =>{
     });
 
     describe("Get ID", () => {
-        it("Should return and populate the Employee's ID in the right place in the card", () =>{
+        it("Should return the Employee's id", () =>{
             // Arrange
             const testName = "Noha";
             const testId = "100";
@@ -56,7 +56,7 @@ describe("Employee class", () =>{
     });
 
     describe("Get Email", () => {
-        it("Should return and populate the Employee's email in the right place in the card", () =>{
+        it("Should return the Employee's email", () =>{
             const testName = "Noha";
             const testId = "100";
             const testEmail = "noha_ashraf85@hotmail.com";
@@ -71,7 +71,7 @@ describe("Employee class", () =>{
     });
 
     describe("Get Role", () => {
-        it("Should return and populate the Employee's role in the right place in the card", () =>{
+        it("Should return the Employee's Role", () =>{
             const testName = "Noha";
             const testId = "100";
             const testEmail = "noha_ashraf85@hotmail.com";
