@@ -70,7 +70,7 @@ Upon answering all the questions an HTML `<genetatedindex.html>` will be automat
 
 ![Demo](./dist/assets/videosAndGifs/homepageLinks.gif)
 
-View the demo of the `<genetatedindex.html>` and the the final HTML page result on the browser [Video](https://drive.google.com/file/d/1tDyKklkteBCH80E-3qU6Nj2TzF0YdVxU/view)
+View the [Video](https://drive.google.com/file/d/1tDyKklkteBCH80E-3qU6Nj2TzF0YdVxU/view) demo of the `<genetatedindex.html>` and the the final HTML page result on the browser
 
 ## License
 
@@ -86,11 +86,11 @@ View the demo of the `<genetatedindex.html>` and the the final HTML page result 
 ## Contributing 
 
 To contribute to this project, please make sure you follow the guidelines in [The Contributor Covenant](https://www.contributor-covenant.org/) as general guidelines.
-Kindly maintain thr highest ethics and respect. For further questions or requests kindly contact me through my [Email](mailto:noha_ashraf85@hotmail.com) or [GitHub](https://github.com/NohaAshraf85)
+Kindly maintain the highest ethics and respect. For further questions or requests kindly contact me through my [Email](mailto:noha_ashraf85@hotmail.com) or [GitHub](https://github.com/NohaAshraf85)
 
 ## Tests 
 
-The application has been tested using [jest package](https://www.npmjs.com/package/jest), requires installation through `npm install jest` command.
+The application has been tested using the [jest package](https://www.npmjs.com/package/jest), note:(requires installation through `npm install jest` command).
 
 The unit test is conducted on the 4 classes that form the solution:
 
