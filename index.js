@@ -65,7 +65,7 @@ function promptTeamManager() {
     ]);
   }
 
-  function promptEngineer() {
+function promptEngineer() {
     return inquirer.prompt([
       {
         type: "input",
@@ -94,7 +94,7 @@ function promptTeamManager() {
     ]);
   }
 
-  function promptIntern() {
+function promptIntern() {
     return inquirer.prompt([
       {
         type: "input",
@@ -123,7 +123,7 @@ function promptTeamManager() {
     ]);
   }
 
-  function generateHTML() {
+function generateHTML() {
 
     var htmlSnippet="";
 
@@ -141,7 +141,7 @@ function promptTeamManager() {
       else if(teamMembers[i].getRole() == "Engineer")
       {
         title=`<span class="fas fa-glasses"> ${teamMembers[i].getRole()}</span>`;
-        details=`GitHub: ${teamMembers[i].getGithub()}`;
+        details=`GitHub: <a target="_blank" href="https://github.com/${teamMembers[i].getGithub()}">${teamMembers[i].getGithub()}</a>`;
       }
 
       else if(teamMembers[i].getRole()=="Intern")
@@ -149,6 +149,8 @@ function promptTeamManager() {
         title=`<span class="fas fa-user-graduate"> ${teamMembers[i].getRole()}</span>`;   
         details=`School: ${teamMembers[i].getSchool()}`;
       }
+
+
       
       htmlSnippet+=` <div class="col-lg-4 col-md-3 col-sm-12">
       <div class="card mt-5 p-3" style="width: 18rem;">
@@ -157,7 +159,7 @@ function promptTeamManager() {
           ${title}
               <ul class="list-group list-group-flush">
                   <li class="list-group-item">ID: ${teamMembers[i].getId()}</li>
-                  <li class="list-group-item">Email: ${teamMembers[i].getEmail()}</li>
+                  <li class="list-group-item">Email: <a href="mailto:${teamMembers[i].getEmail()}">${teamMembers[i].getEmail()}</a></li>
                   <li class="list-group-item">${details}</li>
               </ul>
               
