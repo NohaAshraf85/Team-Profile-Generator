@@ -6,7 +6,6 @@ const Employee = require("./lib/Employee");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
-
 var teamMembers = [];
 
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -154,7 +153,7 @@ function generateHTML() {
       
       htmlSnippet+=` <div class="col-lg-4 col-md-3 col-sm-12">
       <div class="card m-4 p-3" style="width: 18rem;">
-          ${teamMembers[i].getName()}
+          <h4>${teamMembers[i].getName()}</h4>
           <br/>
           ${title}
               <ul class="list-group list-group-flush">
@@ -220,8 +219,6 @@ ${htmlSnippet}
   .catch(function(err) {
     console.log(err);
   });
-
-
 
 function promptChoice(choice)
 {
