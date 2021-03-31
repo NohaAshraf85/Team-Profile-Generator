@@ -1,0 +1,25 @@
+body{
+    background-image: url('./images/pexels-fauxels-3183150.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.navbar-brand{
+    font-size: 40px;
+    color:white;
+    font-weight: bolder;
+}
+
+.card{
+    border-radius: 15px;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.52);
+    color: white;
+    
+}
+
+.icon{
+    padding: 10px;
+    font-size: 20px;
+}

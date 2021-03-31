@@ -134,26 +134,26 @@ function generateHTML() {
 
       if(teamMembers[i].getRole() == "Manager")
       {
-        title=`<span class="fas fa-mug-hot"> ${teamMembers[i].getRole()}</span>`;
+        title=`<span class="fas fa-mug-hot icon"> ${teamMembers[i].getRole()}</span>`;
         details=`Office number: ${teamMembers[i].officeNumber}`;
       }
 
       else if(teamMembers[i].getRole() == "Engineer")
       {
-        title=`<span class="fas fa-glasses"> ${teamMembers[i].getRole()}</span>`;
+        title=`<span class="fas fa-glasses icon"> ${teamMembers[i].getRole()}</span>`;
         details=`GitHub: <a target="_blank" href="https://github.com/${teamMembers[i].getGithub()}">${teamMembers[i].getGithub()}</a>`;
       }
 
       else if(teamMembers[i].getRole()=="Intern")
       {
-        title=`<span class="fas fa-user-graduate"> ${teamMembers[i].getRole()}</span>`;   
+        title=`<span class="fas fa-user-graduate icon"> ${teamMembers[i].getRole()}</span>`;   
         details=`School: ${teamMembers[i].getSchool()}`;
       }
 
 
       
       htmlSnippet+=` <div class="col-lg-4 col-md-3 col-sm-12">
-      <div class="card mt-5 p-3" style="width: 18rem;">
+      <div class="card m-4 p-3" style="width: 18rem;">
           ${teamMembers[i].getName()}
           <br/>
           ${title}
@@ -180,7 +180,7 @@ function generateHTML() {
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-dark bg-success bg-gradient">
+        <nav class="navbar navbar">
             <div class="container-fluid">
               <span class="navbar-brand mb-0 h1 mx-auto py-3">My Team</span>
             </div>
