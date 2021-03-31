@@ -11,6 +11,14 @@ var teamMembers = [];
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
+const numberValidator = async (input) => {
+  const parsed=Number.parseInt(input);
+  if (Number.isNaN(parsed) || input == 0) {
+     return 'Incorrect asnwer';
+  }
+  return true;
+};
+
 function promptChoices()
 {
   return inquirer.prompt([
@@ -37,7 +45,8 @@ function promptTeamManager() {
       {
         type: "input",
         name: "id",
-        message:"What is the team manager’s id?"
+        message:"What is the team manager’s id?",
+        validate: numberValidator
       },
 
       {
@@ -49,7 +58,8 @@ function promptTeamManager() {
       {
         type: "input",
         name: "officeNumber",
-        message: "What is the team manager’s office number?"
+        message: "What is the team manager’s office number?",
+        validate: numberValidator
       },
      
     ]);
@@ -66,7 +76,8 @@ function promptTeamManager() {
       {
         type: "input",
         name: "id",
-        message:"What is the engineer's id?"
+        message:"What is the engineer's id?",
+        validate: numberValidator
       },
 
       {
@@ -93,7 +104,8 @@ function promptTeamManager() {
       {
         type: "input",
         name: "id",
-        message: "What is the intern’s id?"
+        message: "What is the intern’s id?",
+        validate: numberValidator
       },
 
       {
@@ -122,31 +134,30 @@ function promptTeamManager() {
 
       if(teamMembers[i].getRole() == "Manager")
       {
-        title=`<i class="fas fa-mug-hot"></i> ${teamMembers[i].getRole()}`;
+        title=`<span class="fas fa-mug-hot"> ${teamMembers[i].getRole()}</span>`;
         details=`Office number: ${teamMembers[i].officeNumber}`;
       }
 
       else if(teamMembers[i].getRole() == "Engineer")
       {
-        title=`<i class="fas fa-glasses"></i> ${teamMembers[i].getRole()}`;
+        title=`<span class="fas fa-glasses"> ${teamMembers[i].getRole()}</span>`;
         details=`GitHub: ${teamMembers[i].getGithub()}`;
       }
 
       else if(teamMembers[i].getRole()=="Intern")
       {
-        title=`<i class="fas fa-user-graduate"></i> ${teamMembers[i].getRole()}`;   
+        title=`<span class="fas fa-user-graduate"> ${teamMembers[i].getRole()}</span>`;   
         details=`School: ${teamMembers[i].getSchool()}`;
       }
       
       htmlSnippet+=` <div class="col-lg-4 col-md-3 col-sm-12">
       <div class="card mt-5 p-3" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
           ${teamMembers[i].getName()}
           <br/>
           ${title}
               <ul class="list-group list-group-flush">
-                  <li class="list-group-item">${teamMembers[i].getId()}</li>
-                  <li class="list-group-item">${teamMembers[i].getEmail()}</li>
+                  <li class="list-group-item">ID: ${teamMembers[i].getId()}</li>
+                  <li class="list-group-item">Email: ${teamMembers[i].getEmail()}</li>
                   <li class="list-group-item">${details}</li>
               </ul>
               
@@ -162,6 +173,7 @@ function promptTeamManager() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
@@ -193,7 +205,7 @@ ${htmlSnippet}
     var teamManager = new Manager(answers.name,answers.id,answers.email,answers.officeNumber);
     teamMembers.push(teamManager);
    
-   promptChoices().then(function(choice){
+    promptChoices().then(function(choice){
      
     promptChoice(choice);
    });
@@ -216,7 +228,7 @@ function promptChoice(choice)
   {
     promptEngineer().then(function(answers) {
     
-      var engineer = new Engineer(answers.name,answers.id,answers.email,answers.github);
+    var engineer = new Engineer(answers.name,answers.id,answers.email,answers.github);
     teamMembers.push(engineer);
     
     promptChoices().then(function(choice){
@@ -232,7 +244,7 @@ function promptChoice(choice)
     promptIntern().then(function(answers) {
     
       var intern = new Intern (answers.name,answers.id,answers.email,answers.school);
-    teamMembers.push(engineer);
+      teamMembers.push(intern);
     
     promptChoices().then(function(choice){
      
@@ -245,9 +257,9 @@ function promptChoice(choice)
 
   else
   {
-    const readme = generateHTML();
+    const HTML = generateHTML();
 
-    return writeFileAsync("generatedindex.html", readme);
+    return writeFileAsync("dist/generatedindex.html", HTML);
   }
 }
   
