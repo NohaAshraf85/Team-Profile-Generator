@@ -1,7 +1,7 @@
 # Team Profile Generator
 ## Description
 
-The team profile generator is an application that supports Managers to create a fast webpage that displays their team's basic informaiton. 
+The team profile generator is an application that supports Managers to create a fast webpage that displays their team's basic information. 
 
 This application is a Command Line Application (CLI) that relies on simple list of prompt questions and upon filling out the responses to these questions an HTML page is automatically generated with a clean and easy to use user interface. The following image depicts the final HTML page displayed.
 
